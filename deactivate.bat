@@ -1,0 +1,1 @@
+call backend/env/Scripts/deactivate
