@@ -1,20 +1,20 @@
 # Set the base image to use for this Dockerfile
-FROM python:3.8
+FROM node:16-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
 
 # Copy the requirements file to the container
-COPY requirements.txt .
+COPY package*.json .
 
 # Install the required packages
-RUN pip install --no-cache-dir -r requirements.txt
+RUN npm ci
 
 # Copy the source code to the container
 COPY . .
 
 # Expose the port number where the application will be available
-EXPOSE 8000
+EXPOSE 3000
 
 # Set the command to be executed when running the container
-CMD ["python", "manage.py", "runserver"]
+CMD ["npm", "start"]

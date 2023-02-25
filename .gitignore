@@ -1,3 +1,5 @@
 backend/env
 .env
 *.pyc
+dockercommands.txt
+docker-compose.yaml
